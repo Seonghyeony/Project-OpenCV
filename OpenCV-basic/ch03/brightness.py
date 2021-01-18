@@ -11,8 +11,9 @@ if src is None:
     print('Image load failed!')
     sys.exit()
 
-dst = cv2.add(src, (100, 100, 100, 0))
+# dst = cv2.add(src, 100)
 # dst = np.clip(src + 100., 0, 255).astype(np.uint8) # src: ndarray type, 255보다 커지면 0부터 셋팅 한다.
+dst = cv2.add(src, (100, 100, 100, 0))
 
 cv2.imshow('src', src)
 cv2.imshow('dst', dst)
