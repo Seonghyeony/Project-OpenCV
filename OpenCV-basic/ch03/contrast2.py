@@ -21,7 +21,7 @@ if src is None:
     print('Image load failed!')
     sys.exit()
 
-# histogram strach using cv2.normalize()
+# histogram stretch using cv2.normalize()
 # dst = cv2.normalize(src, None, 0, 255, cv2.NORM_MINMAX)
 
 # 수식을 이용한 normalize
