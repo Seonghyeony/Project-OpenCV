@@ -12,9 +12,11 @@ if src is None:
 src_hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)
 
 def on_trackbar(pos):
+    # getTrackbarPos: 'dst' 창에 있는 'H_min' Trackbar의 위치를 받아옴. 
     hmin = cv2.getTrackbarPos('H_min', 'dst')
     hmax = cv2.getTrackbarPos('H_max', 'dst')
 
+    # 원하는 색상 영역을 찾을 수 있다.
     dst = cv2.inRange(src_hsv, (hmin, 150, 0), (hmax, 255, 255))
     cv2.imshow('dst', dst)
 
@@ -22,6 +24,7 @@ def on_trackbar(pos):
 cv2.imshow('src', src)
 cv2.namedWindow('dst')
 
+# 트랙바로 표현. -> 특정 색상 영역 추출을 할 수 있다.
 cv2.createTrackbar('H_min', 'dst', 50, 179, on_trackbar)
 cv2.createTrackbar('H_max', 'dst', 80, 179, on_trackbar)
 on_trackbar(0)
